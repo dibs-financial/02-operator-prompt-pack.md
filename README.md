@@ -35,6 +35,34 @@ The optional `acp.json` step passes the same server through to Junie, Claude Age
 
 Always pin the agent. RubyVox does not publish a static tool catalog; the client discovers tools at runtime. Only use verbs RubyVox documents: list / update / manage agents, pull leads, text a caller, book a slot.
 
+## Go-live checklist
+
+Status as of 2026-09-21.
+
+**Verified**
+
+- [x] Claude can book, move, and cancel visits on The Playbook (primary calendar of `dibsonprivatebanking@gmail.com`).
+- [x] Prompt pack, JetBrains setup, calendar guide, and tool scan are on `main`.
+
+**Needed before a real caller books, in order**
+
+1. [ ] **RubyVox writes to The Playbook.** Link the Google account in the RubyVox dashboard, then run the confirm prompt in [playbook-calendar.md](playbook-calendar.md) from JetBrains. If booking is not a discovered tool, the phone side cannot schedule and this is the blocker.
+2. [ ] **JetBrains connects to RubyVox.** Add the server JSON from [jetbrains-setup.md](jetbrains-setup.md), finish the browser login, run the identity block below, and record the tool names it discovers.
+3. [ ] **Time zone.** Set the Google account to Central (Settings → General → Time zone). It was on UTC at setup.
+4. [ ] **One real end-to-end call.** Call (509) 808-8801, ask for a visit, confirm it appears on The Playbook with the `Visit — ` prefix, name, and phone. Reschedule it from JetBrains and confirm the caller gets the text.
+
+**Decide before launch**
+
+- [ ] Visit hours and length. Prompts assume 10:00 to 18:00 Central, 60 minutes.
+- [ ] Confirmation and reminder texts. Check whether RubyVox sends them after a booking. If not, see [research/](research/) for the reminder-layer options.
+- [ ] Who moves visits. Anyone besides the owner needs "make changes to events" on the calendar.
+- [ ] Safety rails. Paste the hard rules block at the bottom of this file into the RubyVox agent's own instructions, not only into chat sessions.
+
+**Open, not blocking**
+
+- [ ] The cancel prompt says "mark cancelled"; the Claude connector deletes. Change the wording or accept delete.
+- [ ] No RubyVox doc for calendar integration was found by search. Ask support whether it can bind a Gmail primary calendar.
+
 ## Identity block (paste first, every new chat)
 
 ```
