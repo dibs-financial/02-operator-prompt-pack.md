@@ -2,6 +2,8 @@
 
 Use these **after** an MCP client is connected to `https://rubyvox.com/mcp` and authorized (ChatGPT Developer Mode connector, Claude custom connector, Cursor, or JetBrains AI Assistant).
 
+JetBrains AI Assistant setup (MCP server JSON, agent hand-off, first prompt): see [jetbrains-setup.md](jetbrains-setup.md).
+
 Always pin the agent. RubyVox does not publish a static tool catalog; the client discovers tools at runtime. Only use verbs RubyVox documents: list / update / manage agents, pull leads, text a caller, book a slot.
 
 ## Identity block (paste first, every new chat)
