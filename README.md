@@ -4,6 +4,33 @@ Use these **after** an MCP client is connected to `https://rubyvox.com/mcp` and 
 
 JetBrains AI Assistant setup (MCP server JSON, agent hand-off, first prompt): see [jetbrains-setup.md](jetbrains-setup.md).
 
+## How RubyVox and JetBrains fit together
+
+**The integration mechanism.** RubyVox exposes its agent controls over MCP at `https://rubyvox.com/mcp`. JetBrains AI Assistant is an MCP client. The setup guide wires them together in three steps:
+
+1. **Bridge.** AI Assistant launches `mcp-remote` through npx, which turns RubyVox's remote HTTP endpoint into a local MCP server the IDE can talk to. Node 20+ is the only dependency.
+2. **Auth.** The first chat opens a RubyVox login in the browser. After that, the IDE holds an authorized session, so the agent UUID is the only thing you paste into prompts.
+3. **Discovery.** RubyVox does not publish a static tool catalog. The IDE learns the available verbs at runtime, which is why every prompt in this pack opens with "discover tools first, do not invent tool names."
+
+The optional `acp.json` step passes the same server through to Junie, Claude Agent, and Codex, so agentic runs inside the IDE can call RubyVox too, not just the chat panel.
+
+**What each side brings.**
+
+- **RubyVox** is the phone-side operator. It answers calls for The Dallas Play House, captures leads, takes messages, books slots, and sends follow-up texts. It holds the live state: who called, when, what they asked.
+- **JetBrains AI Assistant** is the desk-side operator. It gives you a place you already sit all day, with model choice, chat history, and the ability to run the same prompts in an agent loop. It brings no telephony of its own.
+
+**How they complement each other.**
+
+- **One workspace, no tab switching.** The daily standup, lead pulls, and follow-up drafts below run from the IDE chat instead of a separate dashboard.
+- **Guardrails live in this prompt pack.** The identity block pins the agent by UUID, forbids invented tools, and blocks voice or copy edits unless asked. JetBrains executes those rules; RubyVox enforces what the account is actually allowed to do.
+- **Human-in-the-loop by default.** Texts are drafted and shown before sending. Bookings stop if the tool is not discovered. The IDE's chat makes that review step natural.
+- **Agents extend it.** With the ACP pass-through, Junie or Claude Agent can chain steps, such as pull last week's callers, then draft one text per unbooked caller, all under the same MCP session.
+
+**Limits worth knowing.**
+
+- The caller page URL is for callers only. It is not an integration surface.
+- Tool names are whatever RubyVox exposes at runtime. The only documented verbs are the ones named above: list, update, and manage agents, pull leads, text a caller, book a slot.
+
 Always pin the agent. RubyVox does not publish a static tool catalog; the client discovers tools at runtime. Only use verbs RubyVox documents: list / update / manage agents, pull leads, text a caller, book a slot.
 
 ## Identity block (paste first, every new chat)
