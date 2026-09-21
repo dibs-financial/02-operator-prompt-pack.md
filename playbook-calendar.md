@@ -1,32 +1,32 @@
 # The Playbook — visit calendar
 
-One Google Calendar, named **The Playbook**, is the single place visits to The Dallas Play House are scheduled and rescheduled. RubyVox books into it. You and JetBrains read and move things on it.
+**The Playbook** is the primary Google Calendar of `dibsonprivatebanking@gmail.com`. It is the single place visits to The Dallas Play House are scheduled and rescheduled. RubyVox books into it. You, JetBrains, and Claude read and move things on it.
 
-## 1. Create the calendar (once, about 3 minutes)
+Decision on 2026-09-21: use the primary calendar rather than a separate secondary calendar. Calendar ID is the account address itself.
 
-1. Open [calendar.google.com](https://calendar.google.com) signed in as the account that owns the RubyVox agent.
-2. Left rail → **Other calendars** → **+** → **Create new calendar**.
-3. Name: `The Playbook`. Description: `Visits to The Dallas Play House. Booked by RubyVox, managed by the operator.` Time zone: America/Chicago.
-4. **Create calendar**.
-5. Open its settings → **Integrate calendar**. Copy the **Calendar ID** (looks like `…@group.calendar.google.com`). Keep it; the prompts below pin to it.
-6. Under **Share with specific people**, add any staff who will move visits, with **Make changes to events**.
+## 1. Calendar settings (once)
 
-Do not use your primary calendar for this. Visits stay on their own shelf so RubyVox never sees or touches personal events.
+1. Open [calendar.google.com](https://calendar.google.com) as `dibsonprivatebanking@gmail.com`.
+2. Settings → General → **Time zone** → set to **(GMT-05:00) Central Time — Chicago**. The account was on UTC at setup, which shifts every visit by five or six hours in the RubyVox dashboard.
+3. Settings → Settings for my calendars → the primary calendar → **Share with specific people**: add any staff who will move visits, with **Make changes to events**.
+
+Because this is the primary calendar, personal events and visits share one shelf. Every visit title starts with `Visit — ` so it can be filtered and so RubyVox and the prompts below never touch anything else.
 
 ## 2. Connect it to RubyVox
 
-RubyVox does not publish a static integration list. In the RubyVox dashboard for agent `542e1ccb-c597-4dd1-bdeb-7f0236ca59cd`, look for the booking or calendar setting and point it at **The Playbook** by its Calendar ID. If the dashboard offers only a primary-calendar link, ask RubyVox support how to target a secondary calendar before going live.
+RubyVox does not publish a static integration list. In the RubyVox dashboard for agent `542e1ccb-c597-4dd1-bdeb-7f0236ca59cd`, look for the booking or calendar setting and link the Google account `dibsonprivatebanking@gmail.com`, primary calendar.
 
 Then confirm from JetBrains AI Chat:
 
 ```
 On The Dallas Play House (542e1ccb-c597-4dd1-bdeb-7f0236ca59cd), what calendar
-does booking write to? Name it. If it is not "The Playbook", stop and tell me.
+does booking write to? Name the account. If it is not dibsonprivatebanking@gmail.com,
+stop and tell me.
 ```
 
-## 3. Connect it to Claude (optional)
+## 3. Claude access (done 2026-09-21)
 
-To let Claude create, move, and cancel visits directly, add the Google Calendar connector in claude.ai → Settings → Connectors, then enable it in the chat. Until that is on, Claude can only draft the change and you apply it.
+The Google Calendar connector is connected in claude.ai for this account and verified: Claude created a test visit, moved it, and deleted it on the primary calendar. Claude can book, reschedule, cancel, and list visits directly. If a new session reports "insufficient scope", reconnect the connector and tick the calendar permissions on Google's consent screen.
 
 ## 4. Scheduling prompts
 
@@ -34,7 +34,7 @@ Book a visit:
 
 ```
 On The Dallas Play House, book a visit for {NAME} ({PHONE}) on {DAY} at {TIME}
-on The Playbook calendar. Title: "Visit — {NAME}". Duration 60 min.
+on The Playbook (dibsonprivatebanking@gmail.com). Title: "Visit — {NAME}". Duration 60 min.
 Put the caller's phone and how they heard about us in the description.
 Confirm what the caller will receive (SMS / email / calendar invite).
 If booking is not a discovered tool, stop and tell me.
@@ -74,5 +74,5 @@ On The Playbook, list open 60-minute slots for the next 7 days between
 
 - Every visit carries the caller's name and phone in the event. No anonymous holds.
 - RubyVox books; a human confirms any reschedule before the caller is texted.
-- Nothing personal goes on The Playbook. Nothing about a visit goes on the primary calendar.
+- Every visit title starts with `Visit — `. Prompts and RubyVox only touch events with that prefix.
 - The caller page `https://rubyvox.com/a/542e1ccb-c597-4dd1-bdeb-7f0236ca59cd` may go in the confirmation text. It never goes in a calendar integration setting.
