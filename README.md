@@ -4,6 +4,8 @@ Use these **after** an MCP client is connected to `https://rubyvox.com/mcp` and 
 
 JetBrains AI Assistant setup (MCP server JSON, agent hand-off, first prompt): see [jetbrains-setup.md](jetbrains-setup.md).
 
+Visit scheduling lives on one Google Calendar, **The Playbook**: setup and prompts in [playbook-calendar.md](playbook-calendar.md). Tool scans go in [research/](research/).
+
 ## How RubyVox and JetBrains fit together
 
 **The integration mechanism.** RubyVox exposes its agent controls over MCP at `https://rubyvox.com/mcp`. JetBrains AI Assistant is an MCP client. The setup guide wires them together in three steps:
