@@ -1,15 +1,16 @@
 // All site copy lives here. Components render it; they do not own words.
-// Freight only. No invented prices: Starter is $0, Desk is "Talk to us", Floor is "Custom".
+// BrokerVox: voice communication between a trucking business and its trucks.
+// No invented prices: Starter is $0, Fleet is "Talk to us", Enterprise is "Custom".
 
 export const links = {
-  createDesk: "https://rubyvox.com/create",
+  getStarted: "https://rubyvox.com/create",
   pricing: "#pricing",
   github: "https://github.com/dibs-financial/brokervox",
 } as const;
 
 export const brand = {
   name: "BrokerVox",
-  tagline: "AI voice desk for freight brokers",
+  tagline: "Voice communication for trucking fleets",
   parent: "DIBS",
   city: "Dallas",
   year: 2026,
@@ -23,52 +24,52 @@ export const nav = [
 ] as const;
 
 export const hero = {
-  eyebrow: "AI voice desk for freight brokers",
-  title: ["Answers the line.", "Qualifies the load.", "Hands it to dispatch."],
+  eyebrow: "Voice communication for trucking fleets",
+  title: ["One line between", "your office", "and your trucks."],
   body:
-    "BrokerVox answers every call to your freight desk, captures origin, destination, equipment, and pickup window, and delivers the load to your dispatcher with a full transcript. Built for working freight brokers. Not a carrier, not a brokerage.",
-  primary: { label: "Build a desk", href: links.createDesk },
+    "BrokerVox is the voice line between a trucking business and its drivers. Drivers call in from the road, dispatch sends updates out, and every check-in, load change, and delay is captured in writing. Built for fleets that run on the phone.",
+  primary: { label: "Get started", href: links.getStarted },
   secondary: { label: "See pricing", href: links.pricing },
 } as const;
 
 export const captureCard = {
-  title: "Load capture",
-  subtitle: "What the desk records on every shipper call",
-  fields: ["Origin", "Destination", "Commodity and weight", "Equipment", "Pickup window", "Delivery window", "Reference number", "Caller and callback"],
-  outcome: "Delivered to dispatch with the transcript.",
+  title: "Driver check-in",
+  subtitle: "What the line records on every call from a truck",
+  fields: ["Driver and unit", "Current location", "Load and reference", "Status", "ETA", "Delays or issues", "Hours remaining", "Callback needed"],
+  outcome: "Logged to dispatch with the transcript.",
 } as const;
 
 export const stats = [
-  { value: "24/7", label: "On the line" },
-  { value: "1", label: "Number, one voice" },
-  { value: "Every call", label: "Transcribed to you" },
-  { value: "0", label: "Rates quoted by the desk" },
+  { value: "24/7", label: "Line is open" },
+  { value: "1", label: "Number for the whole fleet" },
+  { value: "Every call", label: "Written down" },
+  { value: "0", label: "Missed check-ins" },
 ] as const;
 
 export const desks = {
   eyebrow: "What it handles",
-  title: "Every call a freight desk gets.",
-  body: "The desk works the phone the way your best dispatcher would on a good day, and it never gives a rate.",
+  title: "Every call between the office and the road.",
+  body: "The line does the phone work dispatch used to do by hand, and it writes everything down.",
   items: [
     {
-      key: "shipper",
-      name: "Shipper calls",
-      body: "Origin, destination, commodity, weight, equipment, pickup and delivery windows. Logged and handed to you.",
+      key: "checkin",
+      name: "Driver check-ins",
+      body: "Drivers call one number. The line takes location, status, and ETA, and logs it against the load.",
     },
     {
-      key: "carrier",
-      name: "Carrier calls",
-      body: "MC number, truck location, equipment, availability. Matches against your open loads and takes a message.",
+      key: "dispatch",
+      name: "Dispatch updates",
+      body: "Send a load change, a new stop, or a new appointment to a driver by voice, then confirm they got it.",
     },
     {
-      key: "tracking",
-      name: "Check calls",
-      body: "Where is my load. It takes the reference, confirms what you have shared, and flags anything late.",
+      key: "assign",
+      name: "Load assignments",
+      body: "Read the driver the pickup, delivery, commodity, and reference. Capture their confirmation.",
     },
     {
-      key: "rates",
-      name: "Rate requests",
-      body: "Captures the lane and the ask. Never quotes. Tells the caller you will come back with a number.",
+      key: "exception",
+      name: "Delays and exceptions",
+      body: "Breakdowns, detention, weather, missed appointments. Flagged to dispatch the moment they come in.",
     },
   ],
 } as const;
@@ -79,91 +80,91 @@ export const how = {
   steps: [
     {
       n: "01",
-      title: "Create the desk",
-      body: "Start from the BrokerVox freight setup on RubyVox. It arrives with the right questions and the right limits.",
+      title: "Set up the line",
+      body: "Create your BrokerVox line with your company name, your dispatch hours, and who gets alerts.",
     },
     {
       n: "02",
-      title: "Give it your rules",
-      body: "Your name, your lanes, your equipment, your hours, and what goes straight to dispatch.",
+      title: "Add your trucks",
+      body: "Drivers, units, and the phone numbers they call from. The line knows who is calling.",
     },
     {
       n: "03",
-      title: "Forward the line",
-      body: "Point your number at the desk, or give out the new one. It picks up on the first ring.",
+      title: "Give drivers the number",
+      body: "One number for check-ins, questions, and problems. It picks up on the first ring, every time.",
     },
     {
       n: "04",
-      title: "Cover the load",
-      body: "The details land in your inbox with the transcript. You quote it and move it.",
+      title: "Run the fleet from the log",
+      body: "Dispatch sees every call in writing, with the transcript, and steps in only when it matters.",
     },
   ],
 } as const;
 
 export const features = {
-  eyebrow: "What a desk does",
-  title: "It works the phone. You move the freight.",
+  eyebrow: "What the line does",
+  title: "It works the phone. Dispatch runs the fleet.",
   items: [
     {
-      title: "Qualifies every load",
-      body: "Asks the questions your dispatcher would ask, in the order they would ask them.",
+      title: "Takes every check-in",
+      body: "Location, status, ETA, and issues, in the order dispatch would ask. No call goes to voicemail.",
     },
     {
       title: "Transcript after every call",
-      body: "Who called, what they need, when it ships. Two sentences and the full text.",
+      body: "Who called, what they said, what changed. Two sentences and the full text.",
     },
     {
-      title: "Never quotes a rate",
-      body: "Rates stay with you. The desk captures the lane and says you will call back.",
+      title: "Reaches drivers by voice",
+      body: "Dispatch sends an update out. The line calls the driver, reads it, and records the confirmation.",
     },
     {
-      title: "Hands off to dispatch",
-      body: "Anything urgent goes to you or your team right away, with the context attached.",
+      title: "Escalates what matters",
+      body: "A breakdown or a missed appointment goes straight to a person, with the context attached.",
     },
     {
-      title: "Texts the caller back",
-      body: "Confirmation, your link, or a follow-up. Drafted for you to approve first.",
+      title: "Texts the driver back",
+      body: "Confirmations, addresses, and reference numbers as a text, so nothing is written on a napkin.",
     },
     {
-      title: "Your name on the line",
-      body: "The desk speaks for your brokerage. Callers hear your shop, not a vendor.",
+      title: "Your company on the line",
+      body: "The line answers with your name. Drivers hear their own office, not a vendor.",
     },
   ],
 } as const;
 
 export const pricing = {
   eyebrow: "Pricing",
-  title: "One desk to start. A floor when you need it.",
+  title: "One line to start. The whole fleet when you are ready.",
   tiers: [
     {
       name: "Starter",
       price: "$0",
       period: "",
-      body: "Build a single freight desk on RubyVox and hear it on your own line.",
-      bullets: ["One desk", "Shared number", "Transcripts", "Community support"],
-      cta: { label: "Build a desk", href: links.createDesk },
+      body: "One line, a handful of trucks, and the call log.",
+      bullets: ["One line", "Shared number", "Transcripts", "Community support"],
+      cta: { label: "Get started", href: links.getStarted },
       featured: false,
     },
     {
-      name: "Desk",
+      name: "Fleet",
       price: "Talk to us",
       period: "",
-      body: "One broker, one number, your lanes, your rules.",
-      bullets: ["Your own number", "Load capture to your inbox", "Follow-up texts", "Hand-off to dispatch", "Onboarding with DIBS"],
-      cta: { label: "Talk to us", href: links.createDesk },
+      body: "Your own number, your drivers, your dispatch rules.",
+      bullets: ["Your own number", "Driver and unit roster", "Outbound updates to drivers", "Escalation to dispatch", "Onboarding with DIBS"],
+      cta: { label: "Talk to us", href: links.getStarted },
       featured: true,
     },
     {
-      name: "Floor",
+      name: "Enterprise",
       price: "Custom",
       period: "",
-      body: "Many desks, one brokerage. Shared rules, shared reporting.",
-      bullets: ["Multiple desks", "Team routing", "Shared transcripts", "Dedicated contact"],
-      cta: { label: "Talk to us", href: links.createDesk },
+      body: "Multiple terminals, one log. Shared rules, shared reporting.",
+      bullets: ["Multiple lines", "Terminal routing", "Shared transcripts", "Dedicated contact"],
+      cta: { label: "Talk to us", href: links.getStarted },
       featured: false,
     },
   ],
-  footnote: "No prices are listed that we have not agreed with you. Desk and Floor are scoped on a call.",
+  footnote: "No prices are listed that we have not agreed with you. Fleet and Enterprise are scoped on a call.",
 } as const;
 
 export const faq = {
@@ -171,41 +172,45 @@ export const faq = {
   title: "Straight answers.",
   items: [
     {
-      q: "Is BrokerVox a freight brokerage or a carrier?",
-      a: "No. BrokerVox is a voice layer for freight brokers. It does not hold freight authority, it does not move loads, and it does not contract with shippers or carriers.",
+      q: "Is BrokerVox a carrier, a broker, or a load board?",
+      a: "No. BrokerVox is the communication line between a trucking business and its own trucks. It does not move freight, hold authority, or match loads.",
     },
     {
-      q: "Does the desk quote rates?",
-      a: "No. It captures the lane and the ask, tells the caller you will come back with a number, and sends you the details.",
+      q: "Does it replace dispatch?",
+      a: "No. It takes the phone work off dispatch and writes it down. People still make the decisions.",
     },
     {
       q: "What happens on a call it cannot handle?",
-      a: "It takes a message, tells the caller you will follow up, and sends you the transcript with the context attached.",
+      a: "It hands the call to a person on your team, with the driver, the load, and the transcript attached.",
     },
     {
-      q: "Where does the desk run?",
-      a: "On RubyVox. You build and manage the desk there, and BrokerVox supplies the freight setup.",
+      q: "Does it work with drivers who are not in the roster?",
+      a: "Yes. It takes the call, asks for name and unit, and flags the unknown number to dispatch.",
+    },
+    {
+      q: "Where does the line run?",
+      a: "On RubyVox. You set up and manage the line there, and BrokerVox supplies the trucking setup.",
     },
     {
       q: "Who is behind it?",
-      a: "DIBS, in Dallas. BrokerVox is a DIBS desk product.",
+      a: "DIBS, in Dallas. BrokerVox is a DIBS product.",
     },
   ],
 } as const;
 
 export const cta = {
-  title: "Put a desk on your line.",
-  body: "Build a BrokerVox freight desk, forward your number, and take the next call from your inbox.",
-  primary: { label: "Build a desk", href: links.createDesk },
+  title: "Put your fleet on one line.",
+  body: "Set up BrokerVox, give your drivers the number, and run the day from the call log.",
+  primary: { label: "Get started", href: links.getStarted },
   secondary: { label: "See pricing", href: links.pricing },
 } as const;
 
 export const footer = {
-  line: `© ${brand.year} ${brand.name}. A ${brand.parent} desk product. ${brand.city}.`,
+  line: `© ${brand.year} ${brand.name}. A ${brand.parent} product. ${brand.city}.`,
   disclaimer:
-    "BrokerVox is a voice layer for freight brokers. It is not a carrier, a freight brokerage, or a load board.",
+    "BrokerVox is a communication line for trucking businesses. It is not a carrier, a freight broker, or a load board.",
   links: [
-    { label: "Build a desk", href: links.createDesk },
+    { label: "Get started", href: links.getStarted },
     { label: "GitHub", href: links.github },
   ],
 } as const;

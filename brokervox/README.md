@@ -1,17 +1,17 @@
 # BrokerVox
 
-BrokerVox — AI voice desk for freight brokers. Answers the line, qualifies the load, hands it to dispatch. Not a carrier, not a brokerage.
+BrokerVox — voice communication between a trucking business and its trucks. Driver check-ins, dispatch updates, load assignments, delays. Every call written down. Not a carrier, not a broker.
 
 Website: https://brokervox.com · A DIBS desk product · Dallas
 
 ## What this is
 
-The BrokerVox marketing site as a Vite + React 18 + TypeScript app. Navy `#0B1F3A` / gold `#C9A227`, Cormorant + DM Sans. Sticky nav, load-capture panel, what the desk handles, how it works, features, pricing, FAQ, CTA, footer. Freight only.
+The BrokerVox marketing site as a Vite + React 18 + TypeScript app. Navy `#0B1F3A` / gold `#C9A227`, Cormorant + DM Sans. Sticky nav, driver check-in panel, what the line handles, how it works, features, pricing, FAQ, CTA, footer.
 
 - All copy lives in `src/data.ts`. Components render it and own no words.
 - Mobile hamburger under 980px.
-- "Build a desk" opens RubyVox. There is no demo line on the site.
-- Starter is `$0`. Desk is "Talk to us". Floor is "Custom". No other prices are listed.
+- "Get started" opens RubyVox. There is no demo line on the site.
+- Starter is `$0`. Fleet is "Talk to us". Enterprise is "Custom". No other prices are listed.
 - `static/` is a no-build fallback (plain HTML + CSS) generated from the same components.
 - `.github/workflows/pages.yml` builds `dist/` on push to `main` and publishes it to the `gh-pages` branch, which GitHub Pages serves.
 
@@ -46,14 +46,14 @@ npm run export:static
 Repo About line:
 
 ```
-BrokerVox — AI voice desk for freight brokers. Answers the line, qualifies the load, hands it to dispatch. Not a carrier, not a brokerage.
+BrokerVox — voice communication between a trucking business and its trucks. Driver check-ins, dispatch updates, load assignments, delays. Every call written down. Not a carrier, not a broker.
 ```
 
-Topics: `voice-agent` `freight` `freight-broker` `dispatch` `dibs` `dallas`
+Topics: `voice` `trucking` `fleet` `dispatch` `dibs` `dallas`
 
 ## Links
 
-- Create a desk: [rubyvox.com/create](https://rubyvox.com/create)
+- Get started: [rubyvox.com/create](https://rubyvox.com/create)
 
 ## File tree
 
@@ -81,4 +81,4 @@ brokervox/
         Pricing, Faq, Cta, Footer, Mark
 ```
 
-BrokerVox is a voice layer for freight brokers. It is not a carrier, a freight brokerage, or a load board.
+BrokerVox is a communication line for trucking businesses. It is not a carrier, a freight broker, or a load board.

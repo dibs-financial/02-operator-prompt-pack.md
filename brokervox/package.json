@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "BrokerVox — AI voice desk for freight brokers. Answers the line, qualifies the load, hands it to dispatch.",
+  "description": "BrokerVox — voice communication between a trucking business and its trucks.",
   "homepage": "https://brokervox.com",
   "scripts": {
     "dev": "vite",
