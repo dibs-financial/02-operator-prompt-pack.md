@@ -10,7 +10,7 @@ export default function Cta() {
           <a className="btn gold" href={cta.primary.href} target="_blank" rel="noreferrer">
             {cta.primary.label}
           </a>
-          <a className="btn ghost" href={cta.secondary.href} target="_blank" rel="noreferrer">
+          <a className="btn ghost" href={cta.secondary.href}>
             {cta.secondary.label}
           </a>
         </div>

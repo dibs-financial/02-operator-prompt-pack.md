@@ -1,4 +1,4 @@
-import DeskCard from "./DeskCard";
+import CaptureCard from "./CaptureCard";
 import { hero } from "../data";
 
 export default function Hero() {
@@ -19,13 +19,12 @@ export default function Hero() {
             <a className="btn gold" href={hero.primary.href} target="_blank" rel="noreferrer">
               {hero.primary.label}
             </a>
-            <a className="btn ghost" href={hero.secondary.href} target="_blank" rel="noreferrer">
+            <a className="btn ghost" href={hero.secondary.href}>
               {hero.secondary.label}
             </a>
           </div>
-          <p className="hero-note">{hero.note}</p>
         </div>
-        <DeskCard />
+        <CaptureCard />
       </div>
     </section>
   );

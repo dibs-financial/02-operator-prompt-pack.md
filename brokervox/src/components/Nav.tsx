@@ -25,9 +25,6 @@ export default function Nav() {
           ))}
         </nav>
         <div className="nav-cta">
-          <a className="btn ghost small" href={hero.secondary.href} target="_blank" rel="noreferrer">
-            {hero.secondary.label}
-          </a>
           <a className="btn gold small" href={hero.primary.href} target="_blank" rel="noreferrer">
             {hero.primary.label}
           </a>
@@ -51,9 +48,6 @@ export default function Nav() {
                 {item.label}
               </a>
             ))}
-            <a className="btn ghost" href={hero.secondary.href} target="_blank" rel="noreferrer">
-              {hero.secondary.label}
-            </a>
             <a className="btn gold" href={hero.primary.href} target="_blank" rel="noreferrer">
               {hero.primary.label}
             </a>

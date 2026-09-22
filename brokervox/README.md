@@ -6,11 +6,11 @@ Website: https://brokervox.com · A DIBS desk product · Dallas
 
 ## What this is
 
-The BrokerVox marketing site as a Vite + React 18 + TypeScript app. Navy `#0B1F3A` / gold `#C9A227`, Cormorant + DM Sans. Sticky nav, Joe desk card, what the desk handles, how it works, features, pricing, FAQ, CTA, footer. Freight only.
+The BrokerVox marketing site as a Vite + React 18 + TypeScript app. Navy `#0B1F3A` / gold `#C9A227`, Cormorant + DM Sans. Sticky nav, load-capture panel, what the desk handles, how it works, features, pricing, FAQ, CTA, footer. Freight only.
 
 - All copy lives in `src/data.ts`. Components render it and own no words.
 - Mobile hamburger under 980px.
-- Joe chips, "Talk to Joe", and "Build a desk" open the live RubyVox links.
+- "Build a desk" opens RubyVox. There is no demo line on the site.
 - Starter is `$0`. Desk is "Talk to us". Floor is "Custom". No other prices are listed.
 - `static/` is a no-build fallback (plain HTML + CSS) generated from the same components.
 - `.github/workflows/pages.yml` builds `dist/` on push to `main` and publishes it to the `gh-pages` branch, which GitHub Pages serves.
@@ -53,7 +53,6 @@ Topics: `voice-agent` `freight` `freight-broker` `dispatch` `dibs` `dallas`
 
 ## Links
 
-- Live desk: [Talk to Joe](https://rubyvox.com/a/791cc6bc-1326-4345-a13a-c4e3d7069b39)
 - Create a desk: [rubyvox.com/create](https://rubyvox.com/create)
 
 ## File tree
@@ -78,7 +77,7 @@ brokervox/
     ├── data.ts
     ├── index.css
     └── components/
-        Nav, Hero, DeskCard, Stats, Desks, How, Features,
+        Nav, Hero, CaptureCard, Stats, Desks, How, Features,
         Pricing, Faq, Cta, Footer, Mark
 ```
 

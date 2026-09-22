@@ -2,8 +2,8 @@
 // Freight only. No invented prices: Starter is $0, Desk is "Talk to us", Floor is "Custom".
 
 export const links = {
-  talkToJoe: "https://rubyvox.com/a/791cc6bc-1326-4345-a13a-c4e3d7069b39",
   createDesk: "https://rubyvox.com/create",
+  pricing: "#pricing",
   github: "https://github.com/dibs-financial/brokervox",
 } as const;
 
@@ -24,27 +24,18 @@ export const nav = [
 
 export const hero = {
   eyebrow: "AI voice desk for freight brokers",
-  title: ["Answers the line.", "Qualifies the load.", "Books the call."],
+  title: ["Answers the line.", "Qualifies the load.", "Hands it to dispatch."],
   body:
-    "BrokerVox picks up every call to your freight desk, gets origin, destination, equipment, and pickup window, and hands the load to your dispatcher with a transcript. Built for working freight brokers. Not a carrier, not a brokerage.",
-  primary: { label: "Talk to Joe", href: links.talkToJoe },
-  secondary: { label: "Build a desk", href: links.createDesk },
-  note: "Joe is a live freight desk run by DIBS in Dallas. Call it and ask it anything a shipper would.",
+    "BrokerVox answers every call to your freight desk, captures origin, destination, equipment, and pickup window, and delivers the load to your dispatcher with a full transcript. Built for working freight brokers. Not a carrier, not a brokerage.",
+  primary: { label: "Build a desk", href: links.createDesk },
+  secondary: { label: "See pricing", href: links.pricing },
 } as const;
 
-export const deskCard = {
-  name: "Joe",
-  role: "Freight desk",
-  owner: "DIBS · Dallas",
-  status: "Live",
-  intro: "Try the desk. Tap a question or open the line.",
-  chips: [
-    "I have a load out of Dallas Thursday.",
-    "What lanes do you cover?",
-    "Do you run reefer?",
-    "Can you get me a rate?",
-  ],
-  open: { label: "Open the Joe line", href: links.talkToJoe },
+export const captureCard = {
+  title: "Load capture",
+  subtitle: "What the desk records on every shipper call",
+  fields: ["Origin", "Destination", "Commodity and weight", "Equipment", "Pickup window", "Delivery window", "Reference number", "Caller and callback"],
+  outcome: "Delivered to dispatch with the transcript.",
 } as const;
 
 export const stats = [
@@ -88,8 +79,8 @@ export const how = {
   steps: [
     {
       n: "01",
-      title: "Start from Joe",
-      body: "Joe already knows freight. Build your desk from the same setup on RubyVox.",
+      title: "Create the desk",
+      body: "Start from the BrokerVox freight setup on RubyVox. It arrives with the right questions and the right limits.",
     },
     {
       n: "02",
@@ -142,13 +133,13 @@ export const features = {
 
 export const pricing = {
   eyebrow: "Pricing",
-  title: "Start on Joe's line. Grow into your own.",
+  title: "One desk to start. A floor when you need it.",
   tiers: [
     {
       name: "Starter",
       price: "$0",
       period: "",
-      body: "Call the Joe desk, then build one of your own on RubyVox.",
+      body: "Build a single freight desk on RubyVox and hear it on your own line.",
       bullets: ["One desk", "Shared number", "Transcripts", "Community support"],
       cta: { label: "Build a desk", href: links.createDesk },
       featured: false,
@@ -159,7 +150,7 @@ export const pricing = {
       period: "",
       body: "One broker, one number, your lanes, your rules.",
       bullets: ["Your own number", "Load capture to your inbox", "Follow-up texts", "Hand-off to dispatch", "Onboarding with DIBS"],
-      cta: { label: "Talk to Joe", href: links.talkToJoe },
+      cta: { label: "Talk to us", href: links.createDesk },
       featured: true,
     },
     {
@@ -168,7 +159,7 @@ export const pricing = {
       period: "",
       body: "Many desks, one brokerage. Shared rules, shared reporting.",
       bullets: ["Multiple desks", "Team routing", "Shared transcripts", "Dedicated contact"],
-      cta: { label: "Talk to Joe", href: links.talkToJoe },
+      cta: { label: "Talk to us", href: links.createDesk },
       featured: false,
     },
   ],
@@ -192,10 +183,6 @@ export const faq = {
       a: "It takes a message, tells the caller you will follow up, and sends you the transcript with the context attached.",
     },
     {
-      q: "Who is Joe?",
-      a: "Joe is the live freight desk DIBS runs in Dallas. It is the fastest way to hear what a desk sounds like before you build your own.",
-    },
-    {
       q: "Where does the desk run?",
       a: "On RubyVox. You build and manage the desk there, and BrokerVox supplies the freight setup.",
     },
@@ -207,10 +194,10 @@ export const faq = {
 } as const;
 
 export const cta = {
-  title: "Hear it before you buy it.",
-  body: "Call the Joe desk. Ask it something a shipper would. Then build one for your brokerage.",
-  primary: { label: "Talk to Joe", href: links.talkToJoe },
-  secondary: { label: "Build a desk", href: links.createDesk },
+  title: "Put a desk on your line.",
+  body: "Build a BrokerVox freight desk, forward your number, and take the next call from your inbox.",
+  primary: { label: "Build a desk", href: links.createDesk },
+  secondary: { label: "See pricing", href: links.pricing },
 } as const;
 
 export const footer = {
@@ -218,7 +205,6 @@ export const footer = {
   disclaimer:
     "BrokerVox is a voice layer for freight brokers. It is not a carrier, a freight brokerage, or a load board.",
   links: [
-    { label: "Talk to Joe", href: links.talkToJoe },
     { label: "Build a desk", href: links.createDesk },
     { label: "GitHub", href: links.github },
   ],
