@@ -49,7 +49,7 @@ Status as of 2026-09-21.
 1. [ ] **RubyVox writes to The Playbook.** Link the Google account in the RubyVox dashboard, then run the confirm prompt in [playbook-calendar.md](playbook-calendar.md) from JetBrains. If booking is not a discovered tool, the phone side cannot schedule and this is the blocker.
 2. [ ] **JetBrains connects to RubyVox.** Add the server JSON from [jetbrains-setup.md](jetbrains-setup.md), finish the browser login, run the identity block below, and record the tool names it discovers.
 3. [ ] **Time zone.** Set the Google account to Central (Settings → General → Time zone). It was on UTC at setup.
-4. [ ] **One real end-to-end call.** Call (509) 808-8801, ask for a visit, confirm it appears on The Playbook with the `Visit — ` prefix, name, and phone. Reschedule it from JetBrains and confirm the caller gets the text.
+4. [ ] **One real end-to-end call.** Call (888) 402-3220, ask for a visit, confirm it appears on The Playbook with the `Visit — ` prefix, name, and phone. Reschedule it from JetBrains and confirm the caller gets the text.
 
 **Decide before launch**
 
@@ -71,7 +71,7 @@ You are operating my RubyVox voice agent via MCP.
 Agent name: The Dallas Play House
 Agent UUID: 542e1ccb-c597-4dd1-bdeb-7f0236ca59cd
 Caller page: https://rubyvox.com/a/542e1ccb-c597-4dd1-bdeb-7f0236ca59cd
-Phone: (509) 808-8801
+Phone: (888) 402-3220
 MCP: https://rubyvox.com/mcp
 
 Before doing anything else:

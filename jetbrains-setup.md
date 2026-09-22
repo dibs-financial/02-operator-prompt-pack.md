@@ -48,7 +48,7 @@ You are operating my RubyVox agent via MCP.
 
 Name: The Dallas Play House
 UUID: 542e1ccb-c597-4dd1-bdeb-7f0236ca59cd
-Phone: (509) 808-8801
+Phone: (888) 402-3220
 
 Discover tools first. Confirm this agent is reachable.
 Do not invent tool names.
