@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "BrokerVox — voice communication between a trucking business and its trucks.",
+  "description": "BrokerVox — automates 90% of a freight broker's job. The broker keeps the 10%.",
   "homepage": "https://brokervox.com",
   "scripts": {
     "dev": "vite",

@@ -1,6 +1,6 @@
 import { captureCard } from "../data";
 
-/** Hero panel: the fields a freight desk records on every call. No sample data. */
+/** Hero panel: the stages the desk runs on one load. No sample data. */
 export default function CaptureCard() {
   return (
     <aside className="capture-card" aria-label={captureCard.title}>
@@ -8,14 +8,11 @@ export default function CaptureCard() {
         <div className="capture-title">{captureCard.title}</div>
         <div className="capture-sub">{captureCard.subtitle}</div>
       </div>
-      <ul className="capture-fields">
+      <ol className="capture-fields">
         {captureCard.fields.map((f) => (
-          <li key={f}>
-            <span className="tick" aria-hidden="true" />
-            {f}
-          </li>
+          <li key={f}>{f}</li>
         ))}
-      </ul>
+      </ol>
       <p className="capture-outcome">{captureCard.outcome}</p>
     </aside>
   );

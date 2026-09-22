@@ -1,17 +1,17 @@
 # BrokerVox
 
-BrokerVox — voice communication between a trucking business and its trucks. Driver check-ins, dispatch updates, load assignments, delays. Every call written down. Not a carrier, not a broker.
+BrokerVox — automates 90% of a freight broker's job. Shipper intake, carrier sourcing, rate confirmations, check calls, delivery and billing prep. The broker keeps the rate, the close calls, and the relationships. Not a brokerage, not a carrier.
 
 Website: https://brokervox.com · A DIBS desk product · Dallas
 
 ## What this is
 
-The BrokerVox marketing site as a Vite + React 18 + TypeScript app. Navy `#0B1F3A` / gold `#C9A227`, Cormorant + DM Sans. Sticky nav, driver check-in panel, what the line handles, how it works, features, pricing, FAQ, CTA, footer.
+The BrokerVox marketing site as a Vite + React 18 + TypeScript app. Navy `#0B1F3A` / gold `#C9A227`, Cormorant + DM Sans. Sticky nav, one-load timeline panel, what the desk handles, how it works, what stays with the broker, pricing, FAQ, CTA, footer.
 
 - All copy lives in `src/data.ts`. Components render it and own no words.
 - Mobile hamburger under 980px.
 - "Get started" opens RubyVox. There is no demo line on the site.
-- Starter is `$0`. Fleet is "Talk to us". Enterprise is "Custom". No other prices are listed.
+- Starter is `$0`. Desk is "Talk to us". Floor is "Custom". No other prices are listed.
 - `static/` is a no-build fallback (plain HTML + CSS) generated from the same components.
 - `.github/workflows/pages.yml` builds `dist/` on push to `main` and publishes it to the `gh-pages` branch, which GitHub Pages serves.
 
@@ -46,10 +46,10 @@ npm run export:static
 Repo About line:
 
 ```
-BrokerVox — voice communication between a trucking business and its trucks. Driver check-ins, dispatch updates, load assignments, delays. Every call written down. Not a carrier, not a broker.
+BrokerVox — automates 90% of a freight broker's job. Shipper intake, carrier sourcing, rate confirmations, check calls, delivery and billing prep. The broker keeps the rate, the close calls, and the relationships. Not a brokerage, not a carrier.
 ```
 
-Topics: `voice` `trucking` `fleet` `dispatch` `dibs` `dallas`
+Topics: `freight-broker` `automation` `voice` `logistics` `dibs` `dallas`
 
 ## Links
 
@@ -81,4 +81,4 @@ brokervox/
         Pricing, Faq, Cta, Footer, Mark
 ```
 
-BrokerVox is a communication line for trucking businesses. It is not a carrier, a freight broker, or a load board.
+BrokerVox is automation for freight brokerages. It is not a freight broker, a carrier, or a load board, and it does not hold authority.
