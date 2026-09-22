@@ -13,7 +13,7 @@ The BrokerVox marketing site as a Vite + React 18 + TypeScript app. Navy `#0B1F3
 - Joe chips, "Talk to Joe", and "Build a desk" open the live RubyVox links.
 - Starter is `$0`. Desk is "Talk to us". Floor is "Custom". No other prices are listed.
 - `static/` is a no-build fallback (plain HTML + CSS) generated from the same components.
-- `.github/workflows/pages.yml` builds `dist/` and deploys GitHub Pages on push to `main`.
+- `.github/workflows/pages.yml` builds `dist/` on push to `main` and publishes it to the `gh-pages` branch, which GitHub Pages serves.
 
 ## Run it
 
@@ -39,7 +39,8 @@ npm run export:static
 
 ## Publish
 
-1. **GitHub Pages.** Push this folder to the root of [dibs-financial/brokervox](https://github.com/dibs-financial/brokervox). In Settings → Pages pick "GitHub Actions". Keep `CNAME` = `brokervox.com` if DNS points here instead of Lovable.
+1. **GitHub Pages.** Every push to `main` rebuilds and publishes to `gh-pages`. Live at https://dibs-financial.github.io/brokervox/. Settings → Pages should read "Deploy from a branch: gh-pages / (root)".
+   To move brokervox.com here: point DNS at GitHub Pages, then delete the "Hold the custom domain" step in the workflow so `CNAME` ships with the build.
 2. **No build.** Upload `static/index.html`, `static/styles.css`, `static/favicon.svg`, and `CNAME` to any static host.
 
 Repo About line:

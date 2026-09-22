@@ -1,9 +1,10 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// Custom domain (brokervox.com via CNAME) serves from the root, so base stays "/".
+// Relative base so the build works both at brokervox.com/ and at
+// dibs-financial.github.io/brokervox/ (project subpath) without a rebuild.
 export default defineConfig({
   plugins: [react()],
-  base: "/",
+  base: "./",
   build: { outDir: "dist", emptyOutDir: true },
 });

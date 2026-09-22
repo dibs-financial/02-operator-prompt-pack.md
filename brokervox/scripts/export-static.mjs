@@ -36,7 +36,7 @@ const body = renderToStaticMarkup(React.createElement(App));
 // tiny inline script for the mobile menu. FAQ uses <details>, so it needs no JS.
 const shell = readFileSync(resolve(root, "index.html"), "utf8");
 const html = shell
-  .replace('<link rel="icon" href="/favicon.svg" type="image/svg+xml" />', '<link rel="icon" href="favicon.svg" type="image/svg+xml" />\n    <link rel="stylesheet" href="styles.css" />')
+  .replace('<link rel="icon" href="favicon.svg" type="image/svg+xml" />', '<link rel="icon" href="favicon.svg" type="image/svg+xml" />\n    <link rel="stylesheet" href="styles.css" />')
   .replace(
     /<div id="root"><\/div>\s*<script type="module" src="\/src\/main.tsx"><\/script>/,
     `<div id="root">${body}</div>
