@@ -1,5 +1,5 @@
 // All site copy lives here. Components render it; they do not own words.
-// No invented prices: Starter is $0, Desk is "Talk to us", Floor is "Custom".
+// Freight only. No invented prices: Starter is $0, Desk is "Talk to us", Floor is "Custom".
 
 export const links = {
   talkToJoe: "https://rubyvox.com/a/791cc6bc-1326-4345-a13a-c4e3d7069b39",
@@ -9,27 +9,27 @@ export const links = {
 
 export const brand = {
   name: "BrokerVox",
-  tagline: "AI voice desk for brokers",
+  tagline: "AI voice desk for freight brokers",
   parent: "DIBS",
   city: "Dallas",
   year: 2026,
 } as const;
 
 export const nav = [
-  { label: "Desks", href: "#desks" },
+  { label: "What it handles", href: "#desks" },
   { label: "How it works", href: "#how" },
   { label: "Pricing", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
 ] as const;
 
 export const hero = {
-  eyebrow: "AI voice desk for brokers",
-  title: ["Answers the line.", "Qualifies the lead.", "Books the meeting."],
+  eyebrow: "AI voice desk for freight brokers",
+  title: ["Answers the line.", "Qualifies the load.", "Books the call."],
   body:
-    "BrokerVox picks up every call to your desk, asks the questions you would ask, and puts the meeting on your calendar with a transcript. Built for working brokers. Not a brokerage.",
+    "BrokerVox picks up every call to your freight desk, gets origin, destination, equipment, and pickup window, and hands the load to your dispatcher with a transcript. Built for working freight brokers. Not a carrier, not a brokerage.",
   primary: { label: "Talk to Joe", href: links.talkToJoe },
   secondary: { label: "Build a desk", href: links.createDesk },
-  note: "Joe is a live freight desk run by DIBS. Call it, ask it anything a shipper would.",
+  note: "Joe is a live freight desk run by DIBS in Dallas. Call it and ask it anything a shipper would.",
 } as const;
 
 export const deskCard = {
@@ -49,40 +49,35 @@ export const deskCard = {
 
 export const stats = [
   { value: "24/7", label: "On the line" },
-  { value: "5", label: "Desk types" },
   { value: "1", label: "Number, one voice" },
   { value: "Every call", label: "Transcribed to you" },
+  { value: "0", label: "Rates quoted by the desk" },
 ] as const;
 
 export const desks = {
-  eyebrow: "Desk types",
-  title: "One desk for each kind of broker.",
-  body: "Each desk knows the questions that matter in its trade and the ones it must never answer.",
+  eyebrow: "What it handles",
+  title: "Every call a freight desk gets.",
+  body: "The desk works the phone the way your best dispatcher would on a good day, and it never gives a rate.",
   items: [
     {
-      key: "real-estate",
-      name: "Real estate",
-      body: "Buyer or seller, area, timeline, pre-approval. Books the showing or the listing call.",
+      key: "shipper",
+      name: "Shipper calls",
+      body: "Origin, destination, commodity, weight, equipment, pickup and delivery windows. Logged and handed to you.",
     },
     {
-      key: "mortgage",
-      name: "Mortgage",
-      body: "Purchase or refi, price range, timeline. Books the application call. Never quotes a rate.",
+      key: "carrier",
+      name: "Carrier calls",
+      body: "MC number, truck location, equipment, availability. Matches against your open loads and takes a message.",
     },
     {
-      key: "insurance",
-      name: "Insurance",
-      body: "Line of coverage, renewal date, current carrier. Books the review. Never binds coverage.",
+      key: "tracking",
+      name: "Check calls",
+      body: "Where is my load. It takes the reference, confirms what you have shared, and flags anything late.",
     },
     {
-      key: "freight",
-      name: "Freight",
-      body: "Origin, destination, equipment, pickup window. Hands the load to your dispatcher.",
-    },
-    {
-      key: "m-and-a",
-      name: "M&A",
-      body: "Buy side or sell side, industry, size range. Books the intro. Nothing else is discussed on the line.",
+      key: "rates",
+      name: "Rate requests",
+      body: "Captures the lane and the ask. Never quotes. Tells the caller you will come back with a number.",
     },
   ],
 } as const;
@@ -93,13 +88,13 @@ export const how = {
   steps: [
     {
       n: "01",
-      title: "Pick a desk",
-      body: "Choose your trade. The desk arrives with the right questions and the right guardrails.",
+      title: "Start from Joe",
+      body: "Joe already knows freight. Build your desk from the same setup on RubyVox.",
     },
     {
       n: "02",
       title: "Give it your rules",
-      body: "Your name, your hours, your calendar, what to say, and what to hand to a human.",
+      body: "Your name, your lanes, your equipment, your hours, and what goes straight to dispatch.",
     },
     {
       n: "03",
@@ -108,39 +103,39 @@ export const how = {
     },
     {
       n: "04",
-      title: "Take the meeting",
-      body: "The booking lands on your calendar. The transcript lands in your inbox.",
+      title: "Cover the load",
+      body: "The details land in your inbox with the transcript. You quote it and move it.",
     },
   ],
 } as const;
 
 export const features = {
   eyebrow: "What a desk does",
-  title: "It works the phone. You work the deal.",
+  title: "It works the phone. You move the freight.",
   items: [
     {
-      title: "Qualifies, then books",
-      body: "Asks the questions you would ask, then puts a real slot on your calendar.",
+      title: "Qualifies every load",
+      body: "Asks the questions your dispatcher would ask, in the order they would ask them.",
     },
     {
       title: "Transcript after every call",
-      body: "Who called, what they asked, what was booked. Two sentences and the full text.",
+      body: "Who called, what they need, when it ships. Two sentences and the full text.",
     },
     {
-      title: "Knows what not to say",
-      body: "No rates, no advice, no binding. It takes a message for you instead.",
+      title: "Never quotes a rate",
+      body: "Rates stay with you. The desk captures the lane and says you will call back.",
     },
     {
-      title: "Hands off to a human",
-      body: "Anything outside its lane goes to you or your team, with the context attached.",
+      title: "Hands off to dispatch",
+      body: "Anything urgent goes to you or your team right away, with the context attached.",
     },
     {
       title: "Texts the caller back",
       body: "Confirmation, your link, or a follow-up. Drafted for you to approve first.",
     },
     {
-      title: "Your voice, your name",
-      body: "The desk speaks for your shop. Callers hear your brokerage, not a vendor.",
+      title: "Your name on the line",
+      body: "The desk speaks for your brokerage. Callers hear your shop, not a vendor.",
     },
   ],
 } as const;
@@ -162,8 +157,8 @@ export const pricing = {
       name: "Desk",
       price: "Talk to us",
       period: "",
-      body: "One broker, one number, your rules, your calendar.",
-      bullets: ["Your own number", "Calendar booking", "Follow-up texts", "Hand-off to a human", "Onboarding with DIBS"],
+      body: "One broker, one number, your lanes, your rules.",
+      bullets: ["Your own number", "Load capture to your inbox", "Follow-up texts", "Hand-off to dispatch", "Onboarding with DIBS"],
       cta: { label: "Talk to Joe", href: links.talkToJoe },
       featured: true,
     },
@@ -171,7 +166,7 @@ export const pricing = {
       name: "Floor",
       price: "Custom",
       period: "",
-      body: "Many desks, one team. Shared rules, shared reporting.",
+      body: "Many desks, one brokerage. Shared rules, shared reporting.",
       bullets: ["Multiple desks", "Team routing", "Shared transcripts", "Dedicated contact"],
       cta: { label: "Talk to Joe", href: links.talkToJoe },
       featured: false,
@@ -185,12 +180,12 @@ export const faq = {
   title: "Straight answers.",
   items: [
     {
-      q: "Is BrokerVox a brokerage?",
-      a: "No. BrokerVox is a voice layer for brokers. It is not a broker-dealer, RIA, lender, carrier, or insurer, and it does not hold a license in any of those trades.",
+      q: "Is BrokerVox a freight brokerage or a carrier?",
+      a: "No. BrokerVox is a voice layer for freight brokers. It does not hold freight authority, it does not move loads, and it does not contract with shippers or carriers.",
     },
     {
-      q: "Does the desk give advice or quote prices?",
-      a: "No. It qualifies the caller and books the meeting. Rates, coverage, valuations, and advice stay with you.",
+      q: "Does the desk quote rates?",
+      a: "No. It captures the lane and the ask, tells the caller you will come back with a number, and sends you the details.",
     },
     {
       q: "What happens on a call it cannot handle?",
@@ -202,7 +197,7 @@ export const faq = {
     },
     {
       q: "Where does the desk run?",
-      a: "On RubyVox. You build and manage the desk there, and BrokerVox supplies the trade-specific setup for brokers.",
+      a: "On RubyVox. You build and manage the desk there, and BrokerVox supplies the freight setup.",
     },
     {
       q: "Who is behind it?",
@@ -213,7 +208,7 @@ export const faq = {
 
 export const cta = {
   title: "Hear it before you buy it.",
-  body: "Call the Joe desk. Ask it something a shipper would. Then build one for your trade.",
+  body: "Call the Joe desk. Ask it something a shipper would. Then build one for your brokerage.",
   primary: { label: "Talk to Joe", href: links.talkToJoe },
   secondary: { label: "Build a desk", href: links.createDesk },
 } as const;
@@ -221,7 +216,7 @@ export const cta = {
 export const footer = {
   line: `© ${brand.year} ${brand.name}. A ${brand.parent} desk product. ${brand.city}.`,
   disclaimer:
-    "BrokerVox is a voice layer. It is not a broker-dealer, RIA, lender, carrier, or insurer.",
+    "BrokerVox is a voice layer for freight brokers. It is not a carrier, a freight brokerage, or a load board.",
   links: [
     { label: "Talk to Joe", href: links.talkToJoe },
     { label: "Build a desk", href: links.createDesk },

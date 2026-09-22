@@ -1,12 +1,12 @@
 # BrokerVox
 
-BrokerVox — AI voice desk for brokers. Answers the line, qualifies the lead, books the meeting. Real estate, mortgage, insurance, freight, M&A. Not a brokerage.
+BrokerVox — AI voice desk for freight brokers. Answers the line, qualifies the load, hands it to dispatch. Not a carrier, not a brokerage.
 
 Website: https://brokervox.com · A DIBS desk product · Dallas
 
 ## What this is
 
-The BrokerVox marketing site as a Vite + React 18 + TypeScript app. Navy `#0B1F3A` / gold `#C9A227`, Cormorant + DM Sans. Sticky nav, Joe desk card, five desk types, how it works, features, pricing, FAQ, CTA, footer.
+The BrokerVox marketing site as a Vite + React 18 + TypeScript app. Navy `#0B1F3A` / gold `#C9A227`, Cormorant + DM Sans. Sticky nav, Joe desk card, what the desk handles, how it works, features, pricing, FAQ, CTA, footer. Freight only.
 
 - All copy lives in `src/data.ts`. Components render it and own no words.
 - Mobile hamburger under 980px.
@@ -46,10 +46,10 @@ npm run export:static
 Repo About line:
 
 ```
-BrokerVox — AI voice desk for brokers. Answers the line, qualifies the lead, books the meeting. Real estate, mortgage, insurance, freight, M&A. Not a brokerage.
+BrokerVox — AI voice desk for freight brokers. Answers the line, qualifies the load, hands it to dispatch. Not a carrier, not a brokerage.
 ```
 
-Topics: `voice-agent` `brokers` `real-estate` `freight` `mortgage` `dibs` `dallas`
+Topics: `voice-agent` `freight` `freight-broker` `dispatch` `dibs` `dallas`
 
 ## Links
 
@@ -82,4 +82,4 @@ brokervox/
         Pricing, Faq, Cta, Footer, Mark
 ```
 
-BrokerVox is a voice layer. It is not a broker-dealer, RIA, lender, carrier, or insurer.
+BrokerVox is a voice layer for freight brokers. It is not a carrier, a freight brokerage, or a load board.

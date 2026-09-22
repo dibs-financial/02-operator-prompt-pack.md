@@ -1,11 +1,10 @@
 import { desks } from "../data";
 
 const glyphs: Record<string, JSX.Element> = {
-  "real-estate": <path d="M4 11 12 4l8 7v9H4z M10 20v-6h4v6" />,
-  mortgage: <path d="M4 20h16M6 20V9l6-5 6 5v11M9 20v-5h6v5" />,
-  insurance: <path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z" />,
-  freight: <path d="M3 7h11v9H3zM14 10h4l3 3v3h-7zM7 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM18 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />,
-  "m-and-a": <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM16 20a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 9l2 6" />,
+  shipper: <path d="M3 7h11v9H3zM14 10h4l3 3v3h-7zM7 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM18 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />,
+  carrier: <path d="M4 17V9l4-4h8l4 4v8H4zM4 13h16M9 17v3M15 17v3" />,
+  tracking: <path d="M12 21s-6-5.3-6-10a6 6 0 1 1 12 0c0 4.7-6 10-6 10zM12 11a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />,
+  rates: <path d="M4 20h16M6 16l4-5 3 3 5-7M18 7h-3M18 7v3" />,
 };
 
 export default function Desks() {

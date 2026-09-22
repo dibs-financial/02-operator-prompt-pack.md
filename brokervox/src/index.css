@@ -213,7 +213,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .stat span { display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
 
 /* Desks */
-.desk-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.desk-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .desk-type {
   border: 1px solid var(--line-dark);
   border-radius: var(--radius);
