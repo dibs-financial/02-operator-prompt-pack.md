@@ -1,84 +1,45 @@
-# BrokerVox
+# BrokerVox Freight Desk
 
-BrokerVox — automates 90% of a freight broker's job. Shipper intake, carrier sourcing, rate confirmations, check calls, delivery and billing prep. The broker keeps the rate, the close calls, and the relationships. Not a brokerage, not a carrier.
+Joe’s working desk. Automates about **90%** of a freight broker’s daily grind from the book. A licensed human keeps the other 10%.
 
-Website: https://brokervox.com · A DIBS desk product · Dallas
+This is a voice + workflow layer. It is **not** a brokerage, carrier, FMCSA system of record, or DAT terminal.
 
-## What this is
+## The 90% Joe runs
 
-The BrokerVox marketing site as a Vite + React 18 + TypeScript app. Navy `#0B1F3A` / gold `#C9A227`, Cormorant + DM Sans. Sticky nav, one-load timeline panel, what the desk handles, how it works, what stays with the broker, pricing, FAQ, CTA, footer.
+1. Answer the line (talk page / overflow / SMS)
+2. Qualify the load (lane, equipment, weight, windows, commodity)
+3. Quote **only** from the lane book
+4. Post to the desk board
+5. Match carriers on the book (equipment + lane + vet)
+6. Issue a rate confirmation
+7. Dispatch + check-calls + ETA relay
+8. POD chase
+9. Invoice the shipper from the load record
+10. After-hours coverage
 
-- All copy lives in `src/data.ts`. Components render it and own no words.
-- Mobile hamburger under 980px.
-- "Get started" opens RubyVox. There is no demo line on the site.
-- Starter is `$0`. Desk is "Talk to us". Floor is "Custom". No other prices are listed.
-- `static/` is a no-build fallback (plain HTML + CSS) generated from the same components.
-- `.github/workflows/pages.yml` builds `dist/` on push to `main` and publishes it to the `gh-pages` branch, which GitHub Pages serves.
+## The 10% Joe parks
 
-## Run it
+- Cargo claims and refusals
+- Credit / collections past terms
+- First-time carrier packet (W-9, COI holder, broker-carrier agreement)
+- Authority inactive or insurance inside 14 days
+- Hazmat, oversized, or commodity not in the book
+- Double-broker / identity fraud flags
+- Rate outside the book band
+
+## Run
 
 ```bash
 npm install
 npm run dev
 ```
 
-Production build and preview:
+Open the Floor. Hit **Joe next** on a load to watch it walk the state machine.
 
-```bash
-npm run build
-npm run preview
-```
+Demo book: Dallas–Atlanta dry van and six more DFW lanes. Seeded conversations include “Need a dry van Friday”, “Where is my load?”, and a blocked MC.
 
-`dist/` is a static site. Drop it on Vercel, Netlify, S3, or GitHub Pages.
+## Stack
 
-Regenerate the no-build fallback after editing copy or styles:
+Vite + React 18 + TypeScript. In-memory store. No backend. Swap `engine.ts` adapters later for RubyVox voice, FMCSA SAFER, DAT/Truckstop, and a real TMS.
 
-```bash
-npm run export:static
-```
-
-## Publish
-
-1. **GitHub Pages.** Every push to `main` rebuilds and publishes to `gh-pages`. Live at https://dibs-financial.github.io/brokervox/. Settings → Pages should read "Deploy from a branch: gh-pages / (root)".
-   To move brokervox.com here: point DNS at GitHub Pages, then delete the "Hold the custom domain" step in the workflow so `CNAME` ships with the build.
-2. **No build.** Upload `static/index.html`, `static/styles.css`, `static/favicon.svg`, and `CNAME` to any static host.
-
-Repo About line:
-
-```
-BrokerVox — automates 90% of a freight broker's job. Shipper intake, carrier sourcing, rate confirmations, check calls, delivery and billing prep. The broker keeps the rate, the close calls, and the relationships. Not a brokerage, not a carrier.
-```
-
-Topics: `freight-broker` `automation` `voice` `logistics` `dibs` `dallas`
-
-## Links
-
-- Get started: [rubyvox.com/create](https://rubyvox.com/create)
-
-## File tree
-
-```
-brokervox/
-├── package.json
-├── vite.config.ts
-├── tsconfig.json
-├── index.html
-├── CNAME                      # brokervox.com
-├── .github/workflows/pages.yml
-├── public/  CNAME, favicon.svg
-├── scripts/export-static.mjs  # renders App to static/index.html
-├── static/                    # no-build fallback
-│   ├── index.html
-│   ├── styles.css
-│   └── favicon.svg
-└── src/
-    ├── main.tsx
-    ├── App.tsx
-    ├── data.ts
-    ├── index.css
-    └── components/
-        Nav, Hero, CaptureCard, Stats, Desks, How, Features,
-        Pricing, Faq, Cta, Footer, Mark
-```
-
-BrokerVox is automation for freight brokerages. It is not a freight broker, a carrier, or a load board, and it does not hold authority.
+A DIBS desk product. Dallas.
