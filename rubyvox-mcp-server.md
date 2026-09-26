@@ -112,3 +112,35 @@ The connector URL to paste into ChatGPT or Claude is `https://rubyvox.com/mcp`. 
 - Path-aware metadata at `/.well-known/oauth-protected-resource/mcp` should serve the same JSON as the root document (RFC 9728).
 - Tools never exposed to chat clients: `confirm_booking`, `capture_card`, `notify_member`. The handler rejects them by name; the `mcp` scope excludes them.
 - The consent screen must look up `client_id` unscoped by user or browser. Dynamic registration is performed by the host with no session.
+
+## Consent lookup fix (pending deploy, 2026-09-26)
+
+Symptom: the address bar carries `client_id=rvxc_…`, the consent screen says "This client is not registered", and both `[dcr]` and `[consent]` log keys are undefined.
+
+Cause: the consent page sends `{ data: { client_id } }` to a server function whose validator was written as `clientId`. Zod strips the unknown key, so the handler sees nothing. A user-scoped lookup (`.eq("user_id", …)` or RLS on the user client) fails the same way, because the row Claude registers through dynamic client registration has no owner.
+
+Fix. Replace the server function's validator and lookup with:
+
+```ts
+const getOAuthClient = createServerFn({ method: "POST" })
+  .middleware([authMiddleware])
+  .validator(z.object({ client_id: z.string().min(1) }))
+  .handler(async ({ data }) => {
+    const { data: client, error } = await supabaseAdmin
+      .from("oauth_clients")
+      .select("client_id, client_name, redirect_uris")
+      .eq("client_id", data.client_id)
+      .maybeSingle();
+    if (error) throw error;
+    return client;
+  });
+```
+
+Do not scope the client row to the signed-in user. Keep the agent list user-scoped; that is a different function.
+
+Same deploy, also verify:
+
+- The authorization-code step compares the request's `redirect_uri` against the stored `redirect_uris` exactly. Claude's callback is `https://claude.ai/api/mcp/auth_callback`.
+- `/oauth/token` resolves the client through the same admin lookup, not the user-scoped one.
+
+After deploy: in Claude → Settings → Connectors, remove The Dallas Play House, add `https://rubyvox.com/mcp` again, finish the consent in the popup. The address-bar `client_id` and the stored row must be the same `rvxc_…`.
