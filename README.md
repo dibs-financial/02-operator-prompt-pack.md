@@ -4,6 +4,8 @@ Use these **after** an MCP client is connected to `https://rubyvox.com/mcp` and 
 
 JetBrains AI Assistant setup (MCP server JSON, agent hand-off, first prompt): see [jetbrains-setup.md](jetbrains-setup.md).
 
+Server reference (discovery, OAuth, RPC): [rubyvox-mcp-server.md](rubyvox-mcp-server.md).
+
 Visit scheduling lives on one Google Calendar, **The Playbook**: setup and prompts in [playbook-calendar.md](playbook-calendar.md). Tool scans go in [research/](research/).
 
 ## How RubyVox and JetBrains fit together
@@ -62,6 +64,8 @@ Status as of 2026-09-21.
 
 - [ ] The cancel prompt says "mark cancelled"; the Claude connector deletes. Change the wording or accept delete.
 - [ ] No RubyVox doc for calendar integration was found by search. Ask support whether it can bind a Gmail primary calendar.
+- [ ] Consent screen resolves the host's dynamically registered `client_id`. Until it does, the Claude connector stays at "connect incomplete". See [rubyvox-mcp-server.md](rubyvox-mcp-server.md), Still open.
+- [ ] `confirm_booking`, `capture_card`, `notify_member` are never in the chat tool list. Verify on first `tools/list`.
 
 ## Identity block (paste first, every new chat)
 
